@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:radial-gradient(circle at top,#2b0033,#0d001a);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+/* Luna */
+.luna{
+position:absolute;
+top:60px;
+right:40px;
+width:80px;
+height:80px;
+background:radial-gradient(circle,#fff,#ddd);
+border-radius:50%;
+box-shadow:0 0 30px #fff;
+animation:flotar 6s ease-in-out infinite alternate;
+}
+@keyframes flotar{from{transform:translateY(0);}to{transform:translateY(15px);}}
+
+/* Estrellas */
+.star{
+position:absolute;
+width:2px;height:2px;
+background:white;border-radius:50%;
+animation:blink 2s infinite alternate;
+}
+@keyframes blink{from{opacity:0.2;}to{opacity:1;}}
+
+/* Carta */
+.carta{
+position:relative;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:25px;
+width:90%;max-width:420px;
+box-shadow:0 0 40px rgba(255,0,150,0.6);
+z-index:2;
+animation:aparecer 2s ease-in-out;
+}
+@keyframes aparecer{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
+
+/* Nombre */
+.nombre{
+font-size:20px;font-weight:bold;
+background:linear-gradient(90deg,#ff4da6,#fff,#ff4da6);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:brillo 4s linear infinite;
+}
+@keyframes brillo{0%{background-position:0%;}100%{background-position:300%;}}
+
+.contador{margin-top:15px;font-size:14px;color:#ffb3ec;}
+
+.boton{
+margin-top:15px;padding:8px 15px;
+border:none;border-radius:20px;
+background:#ff4da6;color:white;
+cursor:pointer;font-size:13px;
+}
+
+/* Corazones */
+.corazon{
+position:absolute;top:-10px;color:#ff4da6;
+animation:caer linear infinite;
+}
+@keyframes caer{to{transform:translateY(110vh);opacity:0;}}
+
+/* Anillo */
+.anillo{
+position:absolute;
+font-size:100px;
+opacity:0;
+transform:scale(0);
+transition:all 0.8s ease;
+z-index:5;
+}
+.anillo.mostrar{
+opacity:1;
+transform:scale(1.2);
+animation:brillar 1.5s infinite alternate;
+}
+@keyframes brillar{
+from{filter:drop-shadow(0 0 10px gold);}
+to{filter:drop-shadow(0 0 30px yellow);}
+}
+
+/* Propuesta */
+.propuesta{
+position:absolute;
+background:rgba(0,0,0,0.8);
+padding:20px;
+border-radius:20px;
+display:none;
+z-index:6;
+}
+.propuesta button{
+margin:8px;
+padding:8px 15px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+}
+
+iframe{display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="luna"></div>
+<div class="anillo" id="anillo">💍</div>
+
+<div class="carta">
+<div class="nombre">Karen Nicol Morales Barrera 💖</div>
+<p>
+Desde el 07/01/2026 comenzó nuestra historia más hermosa.
+Eres mi destino favorito, mi amor eterno, mi felicidad,
+mi alregia, mi risa y mi vida<3
+baby aprovecho q estas durmiendo para poder hacerte esto xq 
+como me dijiste q te gustan q te haga esto no me
+cansare de hacerlo xq te gusta asi yo duerma tarde no importa bb
+bueno amorcito como siempre te digo cuando hablo para ti 
+las palabras son infinitas xq eres mi mayor tesoro q tengo
+alegras todos mis dias con tu presencia, tu voz, tu risita y
+la forma en la q me amas bb, gracias x estar a mi lado mi niña
+no me canso de decirte q eres lo mejor q me a pasado mi amor
+te amo demasiado mi niña ya quiero q termine el año para q tu
+papá me de el permiso de ir a verte siempre y cuando tu quieras
+obviamente baby pero menos mal este año esta avanzando rapido
+xq ya estamos marzo y solo faltan 9 meses más para q accabe el
+año y espero siga avanzando rapido pa ir a verte bebeeeeeee
+mi niña desde q te conoci estoy muy feliz la verdad 
+nunca eh estado tan feliz pero llegaste tu a cambiar todo, 
+hacerme sentir muy amado y enamorarme cada dia más, más, más...
+y nuevamente te agradezco x hacerme muy feliz mi vida 
+yo sin ti seria un cuerpo sin alma mi amor xq si te vas de mi
+vida me dolera mucho y te extrañaria como no te imaginas mi niña 
+pero igual te voy a entender mi reina 
+y pase lo q pase tu siempre serás el amor de mi vida tu y solo tu
+xq me enseñaste lo q es ser amado yo si quisiera q podamos hacer
+todas las promesas q nos dijimos bb yo si quisiera verte de blanco
+llegando al altar y q nuestros hijos lleven los anillos yo ruego y
+pido q si o si llege ese momento para q seas mi esposa para toda la
+vida mi amor hasta q la muerte nos separe pero igual baby nada de 
+limites xq ni la muerte nos llegara a separar mi amor y para terminar
+quiero q sepas q no olvides ni dudes lo mucho q te amo mi osita 
+dormilona, me encantas mucho mi amor, gracias x ser como eres baby
+gracias x mostrar poco a poco más tu personalidad y ser tu misma
+te amuuuu como buzz lithyear al infinito y más alla mi vida<3
+
+
+</p>
+<div class="contador" id="contador"></div>
+<button class="boton" onclick="activarPropuesta()">Siempre tú y yo</button>
+</div>
+
+<div class="propuesta" id="propuesta">
+<h3>¿Quieres estar conmigo para siempre? 💕</h3>
+<button onclick="respuestaSi()">Sí 💖</button>
+<button onclick="respuestaObvio()">Obvio sí 😍</button>
+</div>
+
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/TlrNxJqODBc?autoplay=1&loop=1&playlist=TlrNxJqODBc"
+allow="autoplay"></iframe>
+
+<script>
+// estrellas
+for(let i=0;i<100;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+star.style.animationDuration=(Math.random()*3+1)+"s";
+document.body.appendChild(star);
+}
+
+// contador
+const fechaInicio=new Date("2026-01-07T00:00:00");
+setInterval(()=>{
+const ahora=new Date();
+const diff=ahora-fechaInicio;
+const dias=Math.floor(diff/(1000*60*60*24));
+const horas=Math.floor((diff/(1000*60*60))%24);
+const minutos=Math.floor((diff/(1000*60))%60);
+const segundos=Math.floor((diff/1000)%60);
+document.getElementById("contador").innerHTML=
+`Juntos por: ${dias} días, ${horas}h ${minutos}m ${segundos}s 💞`;
+},1000);
+
+// corazones lluvia
+setInterval(()=>{
+const c=document.createElement("div");
+c.className="corazon";
+c.innerHTML="❤";
+c.style.left=Math.random()*100+"vw";
+c.style.fontSize=(Math.random()*25+15)+"px";
+c.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(c);
+setTimeout(()=>{c.remove();},6000);
+},300);
+
+// propuesta
+function activarPropuesta(){
+document.getElementById("anillo").classList.add("mostrar");
+document.getElementById("propuesta").style.display="block";
+fuegos();
+}
+
+function fuegos(){
+for(let i=0;i<30;i++){
+let f=document.createElement("div");
+f.innerHTML="🎆";
+f.style.position="absolute";
+f.style.left=Math.random()*100+"%";
+f.style.top=Math.random()*100+"%";
+f.style.fontSize="30px";
+document.body.appendChild(f);
+setTimeout(()=>{f.remove();},2000);
+}
+}
+
+function respuestaSi(){
+alert("Sabía que dirías que sí 💖✨");
+}
+
+function respuestaObvio(){
+alert("Entonces es para siempre mi amor 💍💕");
+}
+</script>
+
+</body>
+</html>
